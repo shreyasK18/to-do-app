@@ -1,5 +1,6 @@
 
-
+## Available Scripts
+To-Do-App is a task management app where you can set create ,update, delete task list, set deadline and priortize each task. 
 ## Available Scripts
 
 In the project directory, you can run:
