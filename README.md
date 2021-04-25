@@ -1,6 +1,6 @@
 
 ## To-Do-App
-To-Do-App is a task management app where you can create ,update, delete task list, set deadline and priortize each task. 
+To-Do-App is a task management app where you can create, update, delete task list, set deadline and priortize each task. 
 
 ## Technology Used
 * React.js
