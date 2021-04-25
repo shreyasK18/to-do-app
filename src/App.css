@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+:root {
+  --black: rgb(0,0,0);
+  --green:#6ac025;
+  --dark-green:rgb(68, 128, 24);
+  
+}
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: var(--green);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+.high{
+  border-left:1px solid red;
+}
+a{
+  color:#333;
+  text-decoration: none;
+}
+input,textarea,select{
+  padding:10px;
+  font-size: 14px;
+  border:1px solid;
+  border-radius: 3px;
+}
+.btn{
+  display:inline-block;
+  border:none;
+  background:#555;
+  color:#fff;
+  padding:7px 20px;
+  cursor:pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  display: grid;
+  grid-template-columns: 0.1fr 0.5fr  0.5fr 0.1fr;
+  background-color: #fff;
+  color: var(--black);
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+.collapsible > input{
+  vertical-align: middle;
+}
+.collapsible > p{
+ margin:0px;
+ 
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  padding:30px 20px;
+  background-color: #fff;
+  /* border-top:1px solid black; */
+}
+.col{
+  display: block;
+  width: 50%;
+  float:left;
+}
+.col > * {
+  margin:10px;
+  display: block;
 }
 
-.App-link {
-  color: #61dafb;
+
+.collapsible:after {
+  content: '\f067'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: var(--black);
+  float: right;
+  margin-left: 5px;
+  font-family: FontAwesome
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.active:after {
+  content: "\f068"; /* Unicode character for "minus" sign (-) */
+  font-family: FontAwesome
 }
