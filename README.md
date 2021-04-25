@@ -4,6 +4,8 @@ To-Do-App is a task management app where you can create ,update, delete task lis
 
 ## Technology Used
 * React.js
+* HTML5
+* CSS3
 
 ## Available Scripts
 
