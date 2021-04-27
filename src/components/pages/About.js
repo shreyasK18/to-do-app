@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function About() {
     return (
@@ -6,17 +6,16 @@ export default function About() {
           <div style={aboutStyle}>
           <h1>
                About
-           </h1>
-           <p>
+          </h1>
+          <p>
                This is ToDo App v1.0.0
-           </p>
+          </p>
           </div>
        </React.Fragment>
     )
 }
 
 const aboutStyle={
-   
     color:'#fff',
     textAlign:'left',
     padding:'10px',

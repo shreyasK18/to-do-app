@@ -7,7 +7,6 @@ import './App.css';
 import Todos from './components/Todos';
 import uuid from 'uuid';
 
-
 class App extends Component{
   state={
     todos: [
@@ -25,9 +24,9 @@ class App extends Component{
     return todo;
    }) });
 }
-// Toggle Complete
+
+// Set priority
 setPriority=(id,newPriority)=>{
-  
   this.setState({todos: this.state.todos.map(todo => {
    if(todo.id === id){
      todo.priority=newPriority;
@@ -35,7 +34,8 @@ setPriority=(id,newPriority)=>{
       return todo;
   }) });
 }
-// Toggle Complete
+
+// Set Date
 setDate=(id,newDate)=>{
   this.setState({todos: this.state.todos.map(todo => {
    if(todo.id === id){
@@ -44,16 +44,17 @@ setDate=(id,newDate)=>{
    return todo;
   }) });
 }
-// Toggle Complete
+
+// Set Notes
 setNotes=(id,newNotes)=>{
   this.setState({todos: this.state.todos.map(todo => {
    if(todo.id === id){
-    
      todo.notes=newNotes;
    }
    return todo;
   }) });
 }
+
 // Add To Do
 addToDo=(title)=>{
   const newToDo={
@@ -87,7 +88,6 @@ addToDo=(title)=>{
             />
           </div>
       </Router>
-      
     );
   };
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -25,9 +25,8 @@ export class Todoitem extends Component {
     getTaskDate=(date)=>{
        return date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
     }
+
     collapse=(e)=>{
-        
-        
        if(e.target === e.currentTarget || e.target.tagName==="P") {
            let collapseElement;
            if(e.target.tagName==="DIV"){
@@ -36,7 +35,6 @@ export class Todoitem extends Component {
             collapseElement=e.target.parentNode;
            }
             
-            
             collapseElement.className="collapsible active";
             let content=collapseElement.nextElementSibling;
             
@@ -44,7 +42,7 @@ export class Todoitem extends Component {
                 collapseElement.className="collapsible";
                 content.style.display = "none";
             } else {
-            content.style.display = "block";
+                content.style.display = "block";
             }
         }
     }
