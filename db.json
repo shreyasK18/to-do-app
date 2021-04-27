@@ -1,11 +1,23 @@
 {
-  "posts": [
+  "todos": [
     {
       "id": 1,
-      "title": "hello"
+      "title": "Buy fruit from grocery",
+      "priorty":"high",
+      "notes":"My Notes"
+    },
+     {
+      "id": 2,
+      "title": "Meeting at 2",
+      "priorty":"high",
+      "notes":"My Notes"
+    },
+     {
+      "id": 3,
+      "title": "Meeting at 3",
+      "priorty":"high",
+      "notes":"My Notes"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
+  
 }
