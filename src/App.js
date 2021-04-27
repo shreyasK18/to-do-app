@@ -6,7 +6,7 @@ import About from './components/pages/About';
 import './App.css';
 import Todos from './components/Todos';
 import uuid from 'uuid';
-import axios from 'axios';
+
 
 class App extends Component{
   state={
@@ -27,11 +27,12 @@ class App extends Component{
 }
 // Toggle Complete
 setPriority=(id,newPriority)=>{
+  
   this.setState({todos: this.state.todos.map(todo => {
    if(todo.id === id){
      todo.priority=newPriority;
    }
-   return todo;
+      return todo;
   }) });
 }
 // Toggle Complete
@@ -47,6 +48,7 @@ setDate=(id,newDate)=>{
 setNotes=(id,newNotes)=>{
   this.setState({todos: this.state.todos.map(todo => {
    if(todo.id === id){
+    
      todo.notes=newNotes;
    }
    return todo;

@@ -5,13 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export class Todoitem extends Component {
     
-   
-    state={
-        date:new Date(),
-        priority:"low",
-        notes:""
-    }
-   
+  
     getStyle=()=>{
        return{
            display:'block',
@@ -26,31 +20,17 @@ export class Todoitem extends Component {
        }
     }
     
-    setNewDate=(newdate)=> {
-        this.setState({date:newdate});
-        this.props.setDate(this.props.todo.id,this.state.date);
-    }
-    setNewPriority=(e)=>{
-
-        this.setState({priority:e.target.value});
-        this.props.setPriority(this.props.todo.id,this.state.priority);
-        this.getStyle();
-    }
-    setNewNotes=(e)=>{
-        this.setState({notes:e.target.value});
-        this.props.setNotes(this.props.todo.id,this.state.notes);
-        console.log(this.props.todo.notes);
-
-    }
+   
+  
     getTaskDate=(date)=>{
        return date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
     }
     collapse=(e)=>{
         
         
-       if(e.target == e.currentTarget || e.target.tagName=="P") {
+       if(e.target === e.currentTarget || e.target.tagName==="P") {
            let collapseElement;
-           if(e.target.tagName=="DIV"){
+           if(e.target.tagName==="DIV"){
             collapseElement=e.target;
            } else{
             collapseElement=e.target.parentNode;
@@ -69,24 +49,25 @@ export class Todoitem extends Component {
         }
     }
     render() {
-        const { id, title,notes }=this.props.todo;
+        const { id, title, notes, priority, date}=this.props.todo;
+       
         return (
             <div style={this.getStyle()} >
                 <div type="button" className="collapsible" onClick={e=>this.collapse(e)}>
                         <input type="checkbox" className="check" onChange={this.props.markComplete.bind(this,id)}/>
                         <p>{title}</p>
-                         <p><i className="fa fa-calendar" aria-hidden="true"></i>{' '+this.getTaskDate(this.state.date)}</p>
+                         <p><i className="fa fa-calendar" aria-hidden="true"></i>{' '+this.getTaskDate(this.props.todo.date)}</p>
                 </div>
                 <div className="content">
-                    <div className="col" style={colText}>
+                    <div className="col col-left">
                         <label htmlFor="notes">Notes</label>
-                        <textarea rows="10" cols="30" placeholder="Notes" value={this.state.notes} onChange={e=>this.setNewNotes(e)}></textarea>
+                        <textarea rows="10" cols="30" placeholder="Notes" onChange={e=> this.props.setNotes(id,e.target.value)} value={notes}></textarea>
                     </div>
                     <div className="col">
                         <label htmlFor="due date">Due Date</label>
-                        <DatePicker selected={this.state.date}  onChange={newdate=>this.setNewDate(newdate)}/>
+                        <DatePicker selected={date}  onChange={newdate=>this.props.setDate(id,newdate)}/>
                         <label htmlFor="Priority">Priority</label>
-                        <select onChange={e=>this.setNewPriority(e)} value={this.props.todo.priority}>
+                        <select onChange={e=> this.props.setPriority(id,e.target.value)} value={priority}>
                             <option value="high">High</option>
                             <option value="medium">Medium</option>
                             <option value="low">Low</option>
@@ -102,9 +83,7 @@ export class Todoitem extends Component {
 Todoitem.propTypes={
     todo: PropTypes.object.isRequired
 };
-const colText={
-    borderRight:'1px solid black'
-}
+
 const btnStyle={
     backgroundColor:'red',
     color:'#fff',

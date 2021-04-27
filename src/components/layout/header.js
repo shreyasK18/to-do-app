@@ -10,11 +10,10 @@ export default function header() {
     )
 }
 const headerStyle={
-    // backgroundColor:"#448018",
+    
     color:'#fff',
     textAlign:'center',
     padding:'10px',
-    color:'#fff',
     margin:'10px'
 }
 const linkStyle={

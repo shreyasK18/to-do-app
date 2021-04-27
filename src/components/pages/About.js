@@ -16,10 +16,9 @@ export default function About() {
 }
 
 const aboutStyle={
-    // backgroundColor:"#448018",
+   
     color:'#fff',
     textAlign:'left',
     padding:'10px',
-    color:'#fff',
     margin:'10px'
 }
