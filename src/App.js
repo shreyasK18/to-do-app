@@ -7,15 +7,37 @@ import './App.css';
 import Todos from './components/Todos';
 import uuid from 'uuid';
 
+
 class App extends Component{
   state={
     todos: [
-    
-    ],
+         {
+          "id": 1,
+          "title": "Buy fruit from grocery",
+          "priorty":"high",
+          "notes":"My Notes",
+          "date":new Date()
+        },
+         {
+          "id": 2,
+          "title": "Meeting at 2",
+          "priorty":"high",
+          "notes":"My Notes",
+          "date":new Date()
+          
+        },
+         {
+          "id": 3,
+          "title": "Meeting at 3",
+          "priorty":"high",
+          "notes":"My Notes",
+          "date":new Date()
+         
+        }
+    ]
     
   }
- 
-  // Toggle Complete
+  
   markComplete=(id)=>{
    this.setState({todos: this.state.todos.map(todo => {
     if(todo.id === id){
