@@ -3,7 +3,7 @@
 To-Do-App is a task management app where you can create, update, delete task list, set deadline and priortize each task. 
 
 ## Live Demo
-Try the application live at https://lapmart-demo.herokuapp.com/
+Try the application live at https://powerful-gorge-67653.herokuapp.com/
 
 ## Technology Used
 * React.js
